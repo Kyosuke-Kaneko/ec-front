@@ -11,7 +11,7 @@
           <img src="../assets/Vector.png" alt="" @click="mypage">
         </div>
         <div class="icon">
-          <img src="../assets/4398.png" alt="" @click="logout" v-if="$auth.loggedIn">
+          <img src="../assets/logout.png" alt="" @click="logout" v-if="$auth.loggedIn">
         </div>
       </div>
     </div>
