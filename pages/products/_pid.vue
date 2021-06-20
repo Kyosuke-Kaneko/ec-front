@@ -39,7 +39,7 @@ export default {
           alert ("個数が0です");
           return
         }
-        this.$store.dispatch('cart/add_product_to_cart',amount);
+        this.$store.dispatch('cart/addProductToCart',amount);
         this.$router.push('cart') 
       } else {
         this.amount = 0; //これがないとdata上は小数点にみなされる

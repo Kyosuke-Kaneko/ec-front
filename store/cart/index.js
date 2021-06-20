@@ -4,7 +4,7 @@ export const state = () => ({
 })
 
 export const  mutations = {
-  push_to_cart(state, payload) {//idかぶらないとき追加
+  pushToCart(state, payload) {//idかぶらないとき追加
     state.cartsLineUp.push({
       id: payload.selectedPro.id,
       name: payload.selectedPro.name,
@@ -13,10 +13,10 @@ export const  mutations = {
       url: payload.selectedPro.url,
     })
   },
-  increament_amount(state,payload) {//idかぶっている時個数増加
+  increamentAmount(state,payload) {//idかぶっている時個数増加
     payload.cartItem.amount = payload.total;
   },
-  push_to_totalPrice(state,payload) {
+  pushToTotalPrice(state,payload) {
     state.totalPrice = payload.totalPrice;
   },
   changeAmount(state, { currentAmo,id}) {
@@ -49,16 +49,16 @@ export const getters = {
 }
 
 export const actions = {
-  add_product_to_cart({ commit, rootState, state }, amount) {
+  addProductToCart({ commit, rootState, state }, amount) {
     const selectedPro = rootState.select;
     const cartItem = state.cartsLineUp.find(
       item => item.id === selectedPro.id
     )
     if (!cartItem) {
-      commit('push_to_cart', { rootState, selectedPro , amount })
+      commit('pushToCart', { rootState, selectedPro , amount })
     } else {
       let total =  parseInt(cartItem.amount) + parseInt(amount);
-      commit('increament_amount', { rootState, cartItem ,total})
+      commit('increamentAmount', { rootState, cartItem ,total})
     }
   },
   calTotalPrice({ commit, rootState, state }) {
@@ -67,6 +67,6 @@ export const actions = {
       
      return prev + current.amount * current.price;
     },0);
-    commit('push_to_totalPrice',{rootState, totalPrice});
+    commit('pushToTotalPrice',{rootState, totalPrice});
   } ,
 }
