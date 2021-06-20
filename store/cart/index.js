@@ -55,7 +55,7 @@ export const actions = {
       item => item.id === selectedPro.id
     )
     if (!cartItem) {
-      commit('pushto_cart', { rootState, selectedPro , amount })
+      commit('push_to_cart', { rootState, selectedPro , amount })
     } else {
       let total =  parseInt(cartItem.amount) + parseInt(amount);
       commit('increament_amount', { rootState, cartItem ,total})
