@@ -39,6 +39,10 @@ export default {
           alert ("個数が0です");
           return
         }
+        if (amount < 0) {
+          alert("個数が不適切です");
+          return
+        }
         this.$store.dispatch('cart/addProductToCart',amount);
         this.$router.push('cart') 
       } else {

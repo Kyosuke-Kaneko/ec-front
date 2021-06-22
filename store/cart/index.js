@@ -64,7 +64,6 @@ export const actions = {
   calTotalPrice({ commit, rootState, state }) {
     const cartItem = state.cartsLineUp;
     const totalPrice = cartItem.reduce((prev,current) => {
-      
      return prev + current.amount * current.price;
     },0);
     commit('pushToTotalPrice',{rootState, totalPrice});
