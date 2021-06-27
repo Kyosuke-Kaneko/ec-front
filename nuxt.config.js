@@ -60,7 +60,6 @@ export default {
       'laravelJWT': {
         provider: 'laravel/jwt',
         url: 'http://localhost:8000',
-        // url: 'http://127.0.0.1:8000/',
         token: {
           maxAge: 60 * 60
         },
@@ -69,11 +68,11 @@ export default {
         }
       },
     },
-    redirect: { //MEMO;検討
-      login: '/register',//よくわかんない。ログインするとき
-      logout: '/',//ログアウトしたとき
-      callback: '/cart',//よくわかんない
-      home: '/' //ログイン成功時,リロード時
+    redirect: { 
+      login: '/register',
+      logout: '/',
+      callback: '/cart',
+      home: '/'
     }
   },
 }

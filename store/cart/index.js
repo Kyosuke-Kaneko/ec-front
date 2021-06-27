@@ -26,12 +26,10 @@ export const  mutations = {
     sameItemId.amount = currentAmo; 
   },
   deleteProduct(state,id) {
-    console.log(state.cartsLineUp);
     const leftProducts = state.cartsLineUp.filter(value => {
       return value.id !== id 
     })
     state.cartsLineUp = leftProducts;
-    console.log(state.cartsLineUp);
   },
   allDelete(state) {
     state.cartsLineUp = [];
