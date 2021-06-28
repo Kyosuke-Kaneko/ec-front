@@ -3,12 +3,12 @@
     <div class="main">
       <p class="mes">ありがとうございます。注文が確定されました。</p>
       <p>注文内容と配送状況についてはEメールでお知らせをご確認ください。</p>
-    <div class="thank-box">
-      <span>注文番号</span>
-      <p class="history-num">{{ $route.query.order_num }}</p>
-      <p>で承りました</p>
-      <button class="thank-button" @click="$router.push('/')">ショッピングを続ける</button>
-    </div>
+      <div class="thank-box">
+        <span>注文番号</span>
+        <p class="history-num">{{ $route.query.order_num }}</p>
+        <p>で承りました</p>
+        <button class="thank-button" @click="$router.push('/')">ショッピングを続ける</button>
+      </div>
     </div>
   </div>
 </template>

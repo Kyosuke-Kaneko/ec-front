@@ -4,7 +4,7 @@ export const state = () => ({
 })
 
 export const  mutations = {
-  pushToCart(state, payload) {//idかぶらないとき追加
+  pushToCart(state, payload) {
     state.cartsLineUp.push({
       id: payload.selectedPro.id,
       name: payload.selectedPro.name,
@@ -13,7 +13,7 @@ export const  mutations = {
       url: payload.selectedPro.url,
     })
   },
-  increamentAmount(state,payload) {//idかぶっている時個数増加
+  increamentAmount(state,payload) {
     payload.cartItem.amount = payload.total;
   },
   pushToTotalPrice(state,payload) {

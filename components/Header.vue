@@ -45,7 +45,8 @@ export default {
   width: 90%;
   display: flex;
   justify-content: space-between;
-  margin: 10px auto ;
+  margin: 15px auto ;
+  padding-bottom: 5px;
   align-items: center;
   border-bottom: 1px #E5E5E5 solid;
 }
@@ -60,5 +61,6 @@ export default {
   width: 24px;
   height: 24px;
   margin-right: 15px;
+  cursor: pointer;
 }
 </style>

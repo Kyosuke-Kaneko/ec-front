@@ -8,7 +8,7 @@ export default ({ store }) => {
             paths: [
                 'cart',
                 'select'
-              ],
+            ],
         })(store)
     })
 }

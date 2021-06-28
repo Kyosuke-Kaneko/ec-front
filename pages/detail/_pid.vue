@@ -7,8 +7,7 @@
           <div class="info-box">
             <div class="product-name">{{$store.state.select.name}}</div>
             <div class="product-price">¥{{$store.state.select.price | addComma}}(税込)</div>
-            <label>個数<input type="number" v-model="amount" min="0" @change="restrict($event)"
-            ></label>
+            <label>個数<input type="number" v-model="amount" min="0" @change="restrict($event)"></label>
             <button class="cart" @click="cart">
               カートに入れる
             </button>

@@ -140,4 +140,7 @@ input, select {
 li {
   list-style-type:none;
 }
+button  a {
+  cursor: pointer;
+}
 </style>

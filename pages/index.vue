@@ -9,33 +9,33 @@
         </div>
       </div>
       <div class="line-up">
-        <div class="line-up-header">Products</div>
-          <client-only placeholder="Loading...">
-            <ul class="line-up-products">
-              <li v-for="product in getItems" :key="product.id" class="cards" @click="toDetail(product.id)">
-                <img :src=product.url alt="product-image">
-                <div class="product-name">{{product.name}}</div>
-                <div class="product-price">¥{{product.price | addComma}}(税込)</div>
-              </li>
-            </ul>
-        <paginate v-if="(getPageCount > 1)"
-          :page-count="getPageCount"
-          :page-range="3"
-          :margin-pages="2"
-          :click-handler="clickCallback"
-          :prev-text="'前へ'"
-          :next-text="'次へ'"
-          :container-class="'pagination-box'"
-          :page-class="'pagination-item'"
-          :page-link-class="'pagination-item__link'"
-          :prev-class="'pagination-btn pagination-prev'"
-          :prev-link-class="'pagination-btn__link'"
-          :next-class="'pagination-btn pagination-next'"
-          :next-link-class="'pagination-btn__link'"
-          :hide-prev-next="true"
-          >
-        </paginate>
-      </client-only>
+        <h2 class="line-up-header">Products</h2>
+        <client-only placeholder="Loading...">
+          <ul class="line-up-products">
+            <li v-for="product in getItems" :key="product.id" class="cards" @click="toDetail(product.id)">
+              <img :src=product.url alt="product-image">
+              <div class="product-name">{{product.name}}</div>
+              <div class="product-price">¥{{product.price | addComma}}(税込)</div>
+            </li>
+          </ul>
+          <paginate v-if="(getPageCount > 1)"
+            :page-count="getPageCount"
+            :page-range="3"
+            :margin-pages="2"
+            :click-handler="clickCallback"
+            :prev-text="'前へ'"
+            :next-text="'次へ'"
+            :container-class="'pagination-box'"
+            :page-class="'pagination-item'"
+            :page-link-class="'pagination-item__link'"
+            :prev-class="'pagination-btn pagination-prev'"
+            :prev-link-class="'pagination-btn__link'"
+            :next-class="'pagination-btn pagination-next'"
+            :next-link-class="'pagination-btn__link'"
+            :hide-prev-next="true"
+            >
+          </paginate>
+        </client-only>
       </div>
     </div>
   </div>

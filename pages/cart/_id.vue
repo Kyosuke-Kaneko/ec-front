@@ -5,15 +5,15 @@
         <p>ショッピングカート</p>
         <div class="cart-index">
           <div v-for="(product, index) in  products" :key="product.id" class="cards">
-              <img :src=product.url alt="product-img">
-              <div class="card-inner">
-                <div class="product-name">{{product.name}}</div>
-                  <div class="right-box">
-                    <label>個数<input type="number" min="0"  :value="product.amount" @change="changeAmo(product.id, $event)"></label>
-                    <div class="product-price">¥{{product.price | addComma}}(税込)</div>
-                  </div>
-                  <button @click="deleteProduct(product.id, index)">削除する</button>
+            <img :src=product.url alt="product-img">
+            <div class="card-inner">
+              <div class="product-name">{{product.name}}</div>
+                <div class="right-box">
+                  <label>個数<input type="number" min="0"  :value="product.amount" @change="changeAmo(product.id, $event)"></label>
+                  <div class="product-price">¥{{product.price | addComma}}(税込)</div>
                 </div>
+                <button @click="deleteProduct(product.id, index)">削除する</button>
+            </div>
           </div>
         </div>
       </div>
@@ -47,7 +47,6 @@ export default {
       } 
       const checkNum = this.products.every((value) => {
         const amount = Number(value.amount);
-        // console.log(amount);
         return amount > 0 || amount !== 0  || !Number.isInteger(amount)
       })
       if (checkNum) {
