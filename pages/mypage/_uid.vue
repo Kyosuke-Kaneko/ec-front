@@ -7,7 +7,7 @@
         </h2>
         <client-only placeholder="Loading...">
           <ul class="history-cards">
-            <li v-for="history in getItems" :key="history.id" class="cards">
+            <li v-for="(history,index) in getItems" :key="index" class="cards">
               <img :src=history.url alt="product-img">
               <div class="info-box">
                 <div class="history-num">注文番号:{{ history.uuid}}</div>
@@ -108,9 +108,7 @@ export default {
   computed: {
     getItems() {
       const current = this.currentPage * this.parPage;
-      console.log(current)
       const start = current - this.parPage;
-      console.log(start)
       return this.filterdHistories.slice(start, current);
       },
     getPageCount() {

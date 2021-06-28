@@ -76,7 +76,7 @@ export default {
         alert("個数が不適切です")
         inputNum = 0;
       }
-      event.target.value = inputNum; //これがないとthis.products（Vuex）の中の値は整数に書き換わってしまう
+      event.target.value = inputNum; 
       this.$store.commit('cart/changeAmount',{ currentAmo: event.target.value,id:id });
       this.$store.dispatch('cart/calTotalPrice');
     },
