@@ -88,10 +88,10 @@ export default {
     
   },
   computed: {
-    storePrice: function() {
+    storePrice() {
       return this.$store.getters["cart/totalPrice"];
     },
-    storeProducts: function() {
+    storeProducts() {
       return this.$store.getters["cart/currentProducts"];
     },
   },

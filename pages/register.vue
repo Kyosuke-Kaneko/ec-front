@@ -87,28 +87,40 @@ export default {
       });
       } catch {
         alert("登録されていないユーザーです");
-        this.$router.push("register");
+        this.loginEmail = "";
+        this.loginPassword = "";
       }
     },
     async register() {
-      const signIn = await this.$axios.post("http://localhost:8000/api/auth/register", 
-      {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-      });
-      const login = await this.$auth.loginWith("laravelJWT", 
-      {
-        data: {
+      try {
+        await this.$axios.post("http://localhost:8000/api/auth/register", 
+        {
+          name: this.name,
           email: this.email,
           password: this.password,
-        },
-      });
-    Promise.all([signIn, login]).then (() => {
-    }).catch(reject => {
-      console.log(reject);
-      this.$router.push("register");
-    })
+        })
+      } catch {
+        alert("登録に失敗しました");
+        this.email = "";
+        this.password = "";
+        this.name = "";
+        return
+      };
+      try {
+        await this.$auth.loginWith("laravelJWT", 
+        {
+          data: {
+            email: this.email,
+            password: this.password,
+          },
+        });
+      } catch {
+        alert("登録に失敗しました");
+        this.email = "";
+        this.password = "";
+        this.name = "";
+        return
+      }
     }
   },
 };
