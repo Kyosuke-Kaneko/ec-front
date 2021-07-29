@@ -59,7 +59,8 @@ export default {
     strategies: {
       'laravelJWT': {
         provider: 'laravel/jwt',
-        url: 'http://localhost:8000',
+        // url: 'http://localhost:8000',
+        url: 'https://ecback.kyosuke-k.com',
         token: {
           maxAge: 60 * 60
         },

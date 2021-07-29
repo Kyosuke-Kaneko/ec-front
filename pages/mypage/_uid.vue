@@ -58,8 +58,9 @@ export default {
   },
   methods: {
     async getHistories() {
-      const historyData =await this.$axios.get("http://127.0.0.1:8000/api/history")
-      this.historyData = historyData.data.data; //↓computedに入れる必要がないと思ったのでmethodsに書きました
+      // const historyData =await this.$axios.get("http://127.0.0.1:8000/api/history")
+      const historyData =await this.$axios.get("https://ecback.kyosuke-k.com/api/history")
+      this.historyData = historyData.data.data; 
       const sorttedHistoryData = this.historyData.sort(function(a,b) {
         if(a.created_at > b.created_at) {
           return -1;

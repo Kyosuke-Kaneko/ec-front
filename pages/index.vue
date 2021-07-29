@@ -52,7 +52,8 @@ export default {
   },
   methods: {
     async getProducts() {
-      const productsData = await this.$axios.get("http://127.0.0.1:8000/api/product");
+      // const productsData = await this.$axios.get("http://127.0.0.1:8000/api/product");
+      const productsData = await this.$axios.get("https://ecback.kyosuke-k.com/api/product");
       this.products = productsData.data.data;
     },
     toDetail(id) {

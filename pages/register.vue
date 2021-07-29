@@ -93,7 +93,8 @@ export default {
     },
     async register() {
       try {
-        await this.$axios.post("http://localhost:8000/api/auth/register", 
+        // await this.$axios.post("http://localhost:8000/api/auth/register", 
+        await this.$axios.post("https://ecback.kyosuke-k.com/api/auth/register", 
         {
           name: this.name,
           email: this.email,
@@ -115,7 +116,7 @@ export default {
           },
         });
       } catch {
-        alert("登録に失敗しました");
+        alert("登録に失敗しました2");
         this.email = "";
         this.password = "";
         this.name = "";
