@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ec-front',
+    title: 'trace',
     htmlAttrs: {
       lang: 'en'
     },
