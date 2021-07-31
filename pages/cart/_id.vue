@@ -55,15 +55,16 @@ export default {
           "user_id":this.$auth.user.id,
           "total_price":this.totalPrice
         }
-        console.log(historyData);
+        // console.log(historyData);
         // await this.$axios.post("http://127.0.0.1:8000/api/history", historyData);
         await this.$axios.post("https://ecback.kyosuke-k.com/api/history", historyData);
+        // console.log(this.products);
         const detailData = this.products.map(value => ({
           "purchase_history_uuid":uuid,
           "product_id":value.id,
           "amount":value.amount
         }));
-        console.log(detailData);
+        // console.log(detailData);
         // await this.$axios.post("http://127.0.0.1:8000/api/detail", detailData)
         await this.$axios.post("https://ecback.kyosuke-k.com/api/detail", detailData)
         this.$store.commit('cart/allDelete');

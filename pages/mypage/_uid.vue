@@ -95,10 +95,13 @@ export default {
           return value
         }
       });
+      // console.log(this.filterdHistories);
     },
     toDetail(id) {
       const extractedPro = this.filterdHistories.splice(
       this.filterdHistories.findIndex((obj) => obj.product_id === id ),1);
+      extractedPro[0].id = extractedPro[0].product_id
+      // console.log(extractedPro);
       this.$store.dispatch('select/select', extractedPro)
       this.$router.push('detail')
     },

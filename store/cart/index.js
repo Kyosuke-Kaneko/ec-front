@@ -12,6 +12,8 @@ export const  mutations = {
       amount: payload.amount,
       url: payload.selectedPro.url,
     })
+    // console.log(state.cartsLineUp);
+
   },
   increamentAmount(state,payload) {
     payload.cartItem.amount = payload.total;
@@ -39,6 +41,7 @@ export const  mutations = {
 
 export const getters = {
   currentProducts: state => {
+    // console.log(state.cartsLineUp);
     return state.cartsLineUp;
   },
   totalPrice: state => {

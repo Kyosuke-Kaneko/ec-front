@@ -11,6 +11,7 @@ export const state = () => ({
 export const  mutations = {
   getSelected(state,payload) {
     state.id = payload.id;
+    // state.id = payload.product_id;
     state.name = payload.name;
     state.price = payload.price;
     state.header = payload.header;

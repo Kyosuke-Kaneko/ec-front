@@ -25,9 +25,9 @@ export default {
         try {
           await this.$auth.logout();
           this.$store.commit('cart/allDelete');
-          console.log("ログアウト成功");
+          // console.log("ログアウト成功");
         } catch (e) {
-          console.log(e);
+          // console.log(e);
         }
       };
     }
